@@ -1,0 +1,73 @@
+/* ContactUs.css */
+/* Container for contact section */
+.contact {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .contact h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .contact p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  /* Style for the contact info list */
+  .contact ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00aaff;
+  padding: 10px;
+}
+
+.footer1 h2 {
+  color: white;
+  font-size: 18px;
+}
+
+.social-media a {
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.footer3 h4 {
+  color: white;
+  font-size: 16px;
+}
+
+
+/* Optional: Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer1 {
+        margin-bottom: 20px;
+    }
+
+    .footer3 {
+        margin-top: 20px;
+    }
+}
+  

@@ -1,0 +1,49 @@
+/* Shop.css */
+
+.shop-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.shop-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-card {
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f9f9f9;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.category-name {
+  font-size: 1.2rem;
+  color: #8a8a8a;
+  margin-top: 10px;
+}

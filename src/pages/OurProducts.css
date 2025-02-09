@@ -1,0 +1,75 @@
+.shop-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  /* Container for the search bar */
+.search-bar {
+  display: flex;
+  justify-content: center; /* Center the search bar horizontally */
+  align-items: center; /* Align items vertically */
+  margin: 20px 0; /* Add space around the search bar */
+}
+
+/* Styling the input field */
+.search-bar input {
+  width: 100%; /* Make the input field take up full width */
+  max-width: 500px; /* Set a maximum width for large screens */
+  padding: 10px; /* Add some padding for better clickability */
+  font-size: 16px; /* Set the font size */
+  border: 2px solid #ddd; /* Light border */
+  border-radius: 25px; /* Rounded corners */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease-in-out; /* Smooth border color transition */
+}
+
+/* Focus effect when the input is selected */
+.search-bar input:focus {
+  border-color: #007BFF; /* Change the border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Add shadow for focus effect */
+}
+
+/* Placeholder text styling */
+.search-bar input::placeholder {
+  color: #aaa; /* Lighter color for placeholder text */
+  font-style: italic; /* Italicize placeholder text */
+}
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .item-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .item-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .price {
+    color: #e91e63;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
