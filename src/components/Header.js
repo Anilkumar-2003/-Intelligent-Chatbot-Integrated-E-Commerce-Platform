@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-
+import "./Header.css";
 
 const Header = ({ onSearch }) => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [profileDropdownVisible, setProfileDropdownVisible] = useState(false);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
+  const toggleProfileDropdown = () => {
+    setProfileDropdownVisible(!profileDropdownVisible);
+  };
+
+  const closeProfileDropdown = () => {
+    setProfileDropdownVisible(false);
+  };
+
   return (
     <header>
       <div className="logo">
-        <a href="#">PANDU SHOPs</a>
+        <a href="#"><i>PANDU SHOPs</i></a>
       </div>
 
       <div className={`menu ${menuVisible ? "visible" : ""}`}>
@@ -49,14 +57,6 @@ const Header = ({ onSearch }) => {
         </ul>
       </div>
 
-      {/* <div className="search">
-        <input
-          type="text"
-          placeholder="Search products"
-          onChange={(e) => onSearch(e.target.value)}
-        />
-      </div> */}
-
       <div className="heading">
         <ul>
           <li>
@@ -89,6 +89,31 @@ const Header = ({ onSearch }) => {
 
       <div className="heading1">
         <ion-icon name="menu" className="ham" onClick={toggleMenu}></ion-icon>
+      </div>
+
+      {/* Profile Icon and Dropdown */}
+      <div className="profile">
+        <ion-icon
+          name="person-circle-outline"
+          className="profile-icon"
+          onClick={toggleProfileDropdown}
+        ></ion-icon>
+        {profileDropdownVisible && (
+          <div className="profile-dropdown">
+            <ul>
+              <li>
+                <Link to="/login" className="under" onClick={closeProfileDropdown}>
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link to="/signup" className="under" onClick={closeProfileDropdown}>
+                  Signup
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </header>
   );

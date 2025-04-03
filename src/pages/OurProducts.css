@@ -73,3 +73,77 @@
     margin-top: 10px;
   }
   
+  /* Full screen container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full screen height */
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+
+/* Loader container */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Apply animation only to the loader, NOT to all SVGs */
+.loader-svg {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+}
+
+.loader-svg circle {
+  fill: none;
+  stroke: hsl(214, 97%, 59%);
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+
+/* Keyframes for animation */
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash4 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
+
+
+
+.error-message {
+  color: #d32f2f; /* Red color */
+  background-color: #ffebee; /* Light red background */
+  border: 1px solid #d32f2f; /* Red border */
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  max-width: 400px;
+  display: inline-block;
+}

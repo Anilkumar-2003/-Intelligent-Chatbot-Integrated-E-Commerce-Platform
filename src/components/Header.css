@@ -58,6 +58,47 @@
     width: 100%;
   }
   
+  .profile {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .profile-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .profile-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profile-dropdown li {
+    padding: 8px 12px;
+  }
+  
+  .profile-dropdown li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .profile-dropdown li a:hover {
+    color: #007bff;
+  }
+  
   /* Responsive styling */
   @media screen and (max-width: 768px) {
     .heading2 ul {

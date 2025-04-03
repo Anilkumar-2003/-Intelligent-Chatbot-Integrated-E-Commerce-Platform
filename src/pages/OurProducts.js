@@ -1,20 +1,44 @@
-import React, { useState, useEffect } from "react"; // Added useEffect import
-import axios from "axios"; // Added axios import
+import React, { useState } from "react";
 import "../pages/OurProducts.css";
 
-const OurProducts  = () => {
-  const [products, setProducts] = useState([]);
+const OurProducts = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-      axios.get("http://localhost:5000/products")
-          .then(response => setProducts(response.data))
-          .catch(error => console.error("Error fetching products:", error));
-  }, []);
+  // Static product data
+  const products = [
+    {
+      productId: 1,
+      productName: "SHOES",
+      productPrice: "₹1059",
+      productDescription: "Stylish and comfortable shoes perfect for everyday wear.",
+      img: "https://i.postimg.cc/DzCLtqSs/shoe.jpg",
+    },
+    {
+      productId: 2,
+      productName: "MEN's T-SHIRT",
+      productPrice: "₹879",
+      productDescription: "Soft cotton men's T-shirt for casual and comfortable wear.",
+      img: "https://i.postimg.cc/hjfTgfmY/mens-t-shirt.webp",
+    },
+    {
+      productId: 3,
+      productName: "JEANS",
+      productPrice: "₹999",
+      productDescription: "Denim jeans offering a perfect fit and comfort for daily use.",
+      img: "https://i.postimg.cc/CxhZSRT4/denim-jeans.jpg",
+    },
+    {
+      productId: 4,
+      productName: "WATCH",
+      productPrice: "₹1099",
+      productDescription: "Stylish analog watch with a durable leather strap for everyday wear.",
+      img: "https://i.postimg.cc/RFXsp6Bb/watch.webp",
+    },
+  ];
 
   // Filter products based on search term
-  const filteredProducts = products.filter(product =>
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = products.filter((product) =>
+    product.productName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -28,16 +52,28 @@ const OurProducts  = () => {
         />
       </div>
       <div className="items-grid">
-                {filteredProducts.map(product => (
-                    <div key={product._id} className="item-card">
-                        <img src={product.image} alt={product.name} className="item-image" />
-                        <h3>{product.name}</h3>
-                        <p>{product.description}</p>
-                        <p><strong>Price:</strong> ${product.price}</p>
-                        <p><strong>Product ID:</strong> {product.productId}</p>
-                    </div>
-                ))}
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <div key={product.productId} className="item-card">
+              <img
+                src={product.img}
+                alt={product.productName}
+                className="item-image"
+              />
+              <h3>{product.productName}</h3>
+              <p>{product.productDescription}</p>
+              <p>
+                <strong>Price:</strong> {product.productPrice}
+              </p>
+              <p>
+                <strong>Product ID:</strong> {product.productId}
+              </p>
             </div>
+          ))
+        ) : (
+          <p>No products found.</p>
+        )}
+      </div>
     </div>
   );
 };
